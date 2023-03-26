@@ -1,0 +1,62 @@
+### -------  Push from local machine to github ------- ###
+1. git add <file> ODER git add -A (für alle files/Änderungen)
+2. git status = shows files that have been modified
+3. git commit -m "Message" = Inserts message for the commit
+4. git status = shows files that are not commited yet
+5. git push = uploading the changes to the Github server
+Alternative Optionen:
+git commit -a -m "<message>" = add + commit in one command
+git add -A = stages all changes
+
+### -------  Pulling information from the server ------- ###
+git pull = getting the latest changes from the server
+
+### ------- Restoring old versions -------- ###
+git checkout --. = restores everything from the last commitment
+
+### ------- Clone git repository to local machine ------- ### 
+git clone https://github.com/<username>/<your-repo>.git
+
+### ------- Making a new repository on local machine ------- ###
+# It is better to make a new repository on github and clone it from there. This spares out the git init command.
+git init = create a repository
+git remote -v = git prints where it thinks you want to push your repo to
+git remote set-url origin
+
+### -------- Working with different commit stages -------- ###
+git log -3 = show last 3 commits
+git log --oneline = show alle commits
+git log --stat = show the amount each file was changed in commits
+git diff = show changes working tree -> index
+git diff --cached = changes working tree -> last commit
+git diff HEAD = changes working tree -> last commit
+git diff HEAD~1 = changes working tree -> second last commit
+git commit --amend = modify the most recent commit
+
+### ------- Working with branches ------- ###
+# Useful commands to create branches:
+git branch	List branches in repository
+git branch <Branchname>	create a new branch
+git checkout <Branchname>	Start working on the Branch
+git log --all --decorate --oneline --graph	Graphical scheme of branching tree
+
+# Useful commands to merge branches:
+git diff <target branch>..<source branch>	show the changes that will be merged into the current branch
+git merge <source branch>	merge the current branch with the branch where the changes have been performed.
+git merge --abort	stop merging process and don't merge anything
+
+# Useful commands to rebase branches:
+git rebase <target branch>: rebases the current branch (source branch) to the tip of the target branch
+
+# Useful commands to delete branches:
+git branch --merged	show which branches are merged together
+git branch -d \<Branchname\>	delete a branch, but only if it was merged to another branch already
+git branch -D \<Branchname\>	deletes a branch, no matter if the work was merged already
+
+# Other useful commands:
+git branch -m <branch>  rename a branch
+git branch -a   list all remote branches
+
+
+
+
